@@ -1,5 +1,9 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:portfolio/Utils/OnHoverButtonTransform.dart';
+import 'dart:html' as html;
+
+import 'package:url_launcher/url_launcher.dart';
 
 class TopBar extends StatelessWidget {
   final double height;
@@ -14,7 +18,7 @@ class TopBar extends StatelessWidget {
       children: [
         FadeInDown(
           child: SizedBox(
-            width: (width / 10).clamp(200, 900),
+            width: (width / 10).clamp(150, 900),
             child: Image.network(
               'assets/images/Ring.png',
               fit: BoxFit.cover,
@@ -32,92 +36,109 @@ class TopBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextButton(
-                    style: ButtonStyle(
-                      overlayColor: MaterialStateProperty.resolveWith(
-                        (states) => const Color.fromARGB(35, 147, 138, 242),
+                  OnHoverButtonTransform(
+                    transform: 5,
+                    child: TextButton(
+                      style: ButtonStyle(
+                        overlayColor: MaterialStateProperty.resolveWith(
+                          (states) => Colors.transparent,
+                        ),
                       ),
-                    ),
-                    onPressed: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(
-                        'Home',
-                        style: TextStyle(
-                          fontSize: (width / 100).clamp(16, 50),
-                          color: const Color.fromARGB(255, 112, 112, 112),
+                      onPressed: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text(
+                          'Home',
+                          style: TextStyle(
+                            fontSize: (width / 100).clamp(16, 50),
+                            color: const Color.fromARGB(255, 112, 112, 112),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  TextButton(
-                    style: ButtonStyle(
-                      overlayColor: MaterialStateProperty.resolveWith(
-                        (states) => const Color.fromARGB(35, 147, 138, 242),
+                  OnHoverButtonTransform(
+                    transform: 5,
+                    child: TextButton(
+                      style: ButtonStyle(
+                        overlayColor: MaterialStateProperty.resolveWith(
+                          (states) => Colors.transparent,
+                        ),
                       ),
-                    ),
-                    onPressed: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(
-                        'Skills',
-                        style: TextStyle(
-                          fontSize: (width / 100).clamp(16, 50),
-                          color: const Color.fromARGB(255, 112, 112, 112),
+                      onPressed: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text(
+                          'Skills',
+                          style: TextStyle(
+                            fontSize: (width / 100).clamp(16, 50),
+                            color: const Color.fromARGB(255, 112, 112, 112),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  TextButton(
-                    style: ButtonStyle(
-                      overlayColor: MaterialStateProperty.resolveWith(
-                        (states) => const Color.fromARGB(35, 147, 138, 242),
+                  OnHoverButtonTransform(
+                    transform: 5,
+                    child: TextButton(
+                      style: ButtonStyle(
+                        overlayColor: MaterialStateProperty.resolveWith(
+                          (states) => Colors.transparent,
+                        ),
                       ),
-                    ),
-                    onPressed: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(
-                        'Projects',
-                        style: TextStyle(
-                          fontSize: (width / 100).clamp(16, 50),
-                          color: const Color.fromARGB(255, 112, 112, 112),
+                      onPressed: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text(
+                          'Projects',
+                          style: TextStyle(
+                            fontSize: (width / 100).clamp(16, 50),
+                            color: const Color.fromARGB(255, 112, 112, 112),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  TextButton(
-                    style: ButtonStyle(
-                      overlayColor: MaterialStateProperty.resolveWith(
-                        (states) => const Color.fromARGB(35, 147, 138, 242),
+                  OnHoverButtonTransform(
+                    transform: 5,
+                    child: TextButton(
+                      style: ButtonStyle(
+                        overlayColor: MaterialStateProperty.resolveWith(
+                          (states) => Colors.transparent,
+                        ),
                       ),
-                    ),
-                    onPressed: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(
-                        'Contact Me',
-                        style: TextStyle(
-                          fontSize: (width / 100).clamp(16, 50),
-                          color: const Color.fromARGB(255, 112, 112, 112),
+                      onPressed: () {},
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text(
+                          'Contact Me',
+                          style: TextStyle(
+                            fontSize: (width / 100).clamp(16, 50),
+                            color: const Color.fromARGB(255, 112, 112, 112),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  TextButton(
-                    style: ButtonStyle(
-                      overlayColor: MaterialStateProperty.resolveWith(
-                        (states) => const Color.fromARGB(35, 147, 138, 242),
+                  OnHoverButtonTransform(
+                    transform: 5,
+                    child: TextButton(
+                      style: ButtonStyle(
+                        overlayColor: MaterialStateProperty.resolveWith(
+                          (states) => Colors.transparent,
+                        ),
                       ),
-                    ),
-                    onPressed: () {},
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text(
-                        'Resume',
-                        style: TextStyle(
-                          fontSize: (width / 100).clamp(16, 50),
-                          color: const Color.fromARGB(255, 147, 138, 242),
+                      onPressed: () {
+                        launch('assets/PDF/Oneeb Khan Resume.pdf');
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Text(
+                          'Resume',
+                          style: TextStyle(
+                            fontSize: (width / 100).clamp(16, 50),
+                            color: const Color.fromARGB(255, 147, 138, 242),
+                          ),
                         ),
                       ),
                     ),
