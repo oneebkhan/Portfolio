@@ -6,11 +6,10 @@ import 'package:flutter/material.dart';
 class OnHoverButtonFlip extends StatefulWidget {
   final Widget child;
   final Widget child2;
-  final double transform;
+
   OnHoverButtonFlip({
     Key? key,
     required this.child,
-    required this.transform,
     required this.child2,
   }) : super(key: key);
 
@@ -25,14 +24,14 @@ class _OnHoverButtonFlipState extends State<OnHoverButtonFlip> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-        onEnter: (event) => onEntered(true, 100),
+        onEnter: (event) => onEntered(true, 1),
         onExit: (event) => onEntered(false, 0),
         child: TweenAnimationBuilder(
           curve: Curves.easeInOutBack,
-          duration: const Duration(milliseconds: 600),
+          duration: const Duration(milliseconds: 1000),
           tween: Tween<double>(begin: 0, end: angle),
           builder: (BuildContext context, double value, __) {
-            if (value >= (pi / 2)) {
+            if (value >= (0.5)) {
               isBack = false;
             } else {
               isBack = true;
@@ -41,7 +40,7 @@ class _OnHoverButtonFlipState extends State<OnHoverButtonFlip> {
               alignment: Alignment.center,
               transform: Matrix4.identity()
                 ..setEntry(3, 2, 0.001)
-                ..rotateY(value / 100 * pi),
+                ..rotateY(value * pi),
               child: Container(
                 child: Container(
                   child: isBack ? widget.child : widget.child2,

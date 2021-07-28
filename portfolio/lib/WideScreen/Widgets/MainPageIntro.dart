@@ -10,8 +10,11 @@ import 'package:url_launcher/url_launcher.dart';
 class MainPageIntro extends StatefulWidget {
   final double width;
   final double height;
-  MainPageIntro({Key? key, required this.width, required this.height})
-      : super(key: key);
+  MainPageIntro({
+    Key? key,
+    required this.width,
+    required this.height,
+  }) : super(key: key);
 
   @override
   _MainPageIntroState createState() => _MainPageIntroState();
@@ -51,11 +54,12 @@ class _MainPageIntroState extends State<MainPageIntro> {
                 child: Padding(
                   padding: const EdgeInsets.only(top: 15),
                   child: AnimatedContainer(
+                    curve: Curves.easeOut,
                     width: circleWidth,
                     duration: Duration(milliseconds: 500),
                     height: _isExpanded == false ? circleWidth : specialHeight,
                     child: AnimatedContainer(
-                      curve: Curves.easeInOut,
+                      curve: Curves.easeOut,
                       width: circleWidth,
                       height:
                           _isExpanded == false ? circleHeight : specialHeight,
@@ -262,22 +266,28 @@ class _MainPageIntroState extends State<MainPageIntro> {
               ),
             ],
           ),
-          OnHoverButtonFlip(
-            transform: 0,
+          FadeInDown(
+            delay: Duration(milliseconds: 1000),
             child: Container(
-              width: widget.width / 2.3,
-              height: (widget.height / 1.8),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: const Color.fromARGB(255, 72, 67, 81),
-              ),
-            ),
-            child2: Container(
-              width: widget.width / 2.3,
-              height: (widget.height / 1.8),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.red,
+              padding: EdgeInsets.only(
+                  bottom: widget.height / 7,
+                  left: widget.width / 40,
+                  right: widget.width / 40),
+              width: widget.width / 2.2,
+              height: widget.height / 1.4,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  BigLogo(
+                    width: widget.width,
+                    height: widget.height,
+                  ),
+                  Logo(
+                    width: widget.width,
+                    height: widget.height,
+                  ),
+                ],
               ),
             ),
           ),
@@ -287,16 +297,193 @@ class _MainPageIntroState extends State<MainPageIntro> {
   }
 }
 
+//The logo in the right
 class Logo extends StatefulWidget {
-  Logo({Key? key}) : super(key: key);
+  final double width;
+  final double height;
+  Logo({
+    Key? key,
+    required this.width,
+    required this.height,
+  }) : super(key: key);
 
   @override
   _LogoState createState() => _LogoState();
 }
 
 class _LogoState extends State<Logo> {
+  bool anim = false;
+  bool _isExpanded = false;
+
+  @override
+  void initState() {
+    Future.delayed(Duration(milliseconds: 1000), () {
+      setState(() {
+        anim = true;
+      });
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    double circleWidth = (widget.width / 27).clamp(50, 170);
+    double circleHeight = (widget.width / 27).clamp(50, 170);
+    double specialHeight = (widget.width / 5).clamp(300, 500);
+
+    return FadeInDown(
+      delay: Duration(milliseconds: 1300),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 15),
+        child: AnimatedContainer(
+          curve: Curves.easeOut,
+          width: circleWidth,
+          duration: Duration(milliseconds: 500),
+          height: _isExpanded == false ? circleWidth : specialHeight,
+          child: AnimatedContainer(
+            curve: Curves.easeOut,
+            width: circleWidth,
+            height: _isExpanded == false ? circleHeight : specialHeight,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(100),
+              color: const Color.fromARGB(255, 72, 67, 81),
+            ),
+            duration: Duration(milliseconds: 300),
+            child: _isExpanded == false
+                ? Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: circleWidth,
+                          width: circleWidth,
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _isExpanded = true;
+                              });
+                            },
+                            icon: Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: const Color.fromARGB(255, 169, 163, 249),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                : Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: circleWidth,
+                          width: circleWidth,
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _isExpanded = false;
+                              });
+                            },
+                            icon: Icon(
+                              Icons.close,
+                              color: const Color.fromARGB(255, 169, 163, 249),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: FaIcon(
+                            FontAwesomeIcons.mobile,
+                            color: const Color.fromARGB(255, 169, 163, 249),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: FaIcon(
+                            FontAwesomeIcons.laptop,
+                            color: const Color.fromARGB(255, 169, 163, 249),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: FaIcon(
+                            FontAwesomeIcons.globe,
+                            color: const Color.fromARGB(255, 169, 163, 249),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: FaIcon(
+                            FontAwesomeIcons.cogs,
+                            color: const Color.fromARGB(255, 169, 163, 249),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class BigLogo extends StatelessWidget {
+  final double width;
+  final double height;
+  const BigLogo({
+    required this.width,
+    required this.height,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width / 3,
+      height: width / 3,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: const Color.fromARGB(255, 72, 67, 81),
+        boxShadow: [
+          BoxShadow(
+            color: const Color.fromARGB(80, 50, 50, 50),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: Offset(6, 6), // changes position of shadow
+          ),
+        ],
+      ),
+      child: OnHoverButtonFlip(
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: const Color.fromARGB(255, 72, 67, 81),
+            image: DecorationImage(
+              image: NetworkImage('assets/images/Logo.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        child2: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: const Color.fromARGB(255, 255, 255, 255),
+            image: DecorationImage(
+              image: NetworkImage('assets/images/Profile.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
