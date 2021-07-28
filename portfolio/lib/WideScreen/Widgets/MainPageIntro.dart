@@ -197,7 +197,7 @@ class _MainPageIntroState extends State<MainPageIntro> {
                         height: 7,
                       ),
                       SelectableText(
-                        'Software Developer',
+                        'Software Engineer',
                         style: TextStyle(
                           fontSize: (widget.width / 45).clamp(30, 100),
                         ),
@@ -270,11 +270,11 @@ class _MainPageIntroState extends State<MainPageIntro> {
             delay: Duration(milliseconds: 1000),
             child: Container(
               padding: EdgeInsets.only(
-                  bottom: widget.height / 7,
-                  left: widget.width / 40,
-                  right: widget.width / 40),
+                left: widget.width / 40,
+                bottom: widget.height / 20,
+              ),
               width: widget.width / 2.2,
-              height: widget.height / 1.4,
+              height: (widget.width / 3.3).clamp(400, 2000),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -393,38 +393,66 @@ class _LogoState extends State<Logo> {
                         ),
                       ),
                       Expanded(
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: FaIcon(
-                            FontAwesomeIcons.mobile,
-                            color: const Color.fromARGB(255, 169, 163, 249),
+                        child: Tooltip(
+                          message: 'Flutter mobile developer',
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _isExpanded = false;
+                              });
+                            },
+                            icon: FaIcon(
+                              FontAwesomeIcons.mobile,
+                              color: const Color.fromARGB(255, 169, 163, 249),
+                            ),
                           ),
                         ),
                       ),
                       Expanded(
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: FaIcon(
-                            FontAwesomeIcons.laptop,
-                            color: const Color.fromARGB(255, 169, 163, 249),
+                        child: Tooltip(
+                          message: 'Flutter web developer',
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _isExpanded = false;
+                              });
+                            },
+                            icon: FaIcon(
+                              FontAwesomeIcons.globe,
+                              color: const Color.fromARGB(255, 169, 163, 249),
+                            ),
                           ),
                         ),
                       ),
                       Expanded(
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: FaIcon(
-                            FontAwesomeIcons.globe,
-                            color: const Color.fromARGB(255, 169, 163, 249),
+                        child: Tooltip(
+                          message: 'Python developer',
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _isExpanded = false;
+                              });
+                            },
+                            icon: FaIcon(
+                              FontAwesomeIcons.python,
+                              color: const Color.fromARGB(255, 169, 163, 249),
+                            ),
                           ),
                         ),
                       ),
                       Expanded(
-                        child: IconButton(
-                          onPressed: () {},
-                          icon: FaIcon(
-                            FontAwesomeIcons.cogs,
-                            color: const Color.fromARGB(255, 169, 163, 249),
+                        child: Tooltip(
+                          message: 'Django Rest Framework API developer',
+                          child: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                _isExpanded = false;
+                              });
+                            },
+                            icon: FaIcon(
+                              FontAwesomeIcons.cogs,
+                              color: const Color.fromARGB(255, 169, 163, 249),
+                            ),
                           ),
                         ),
                       ),
@@ -469,7 +497,7 @@ class BigLogo extends StatelessWidget {
             color: const Color.fromARGB(255, 72, 67, 81),
             image: DecorationImage(
               image: NetworkImage('assets/images/Logo.png'),
-              fit: BoxFit.cover,
+              fit: BoxFit.fitHeight,
             ),
           ),
         ),
@@ -479,7 +507,7 @@ class BigLogo extends StatelessWidget {
             color: const Color.fromARGB(255, 255, 255, 255),
             image: DecorationImage(
               image: NetworkImage('assets/images/Profile.png'),
-              fit: BoxFit.cover,
+              fit: BoxFit.fitHeight,
             ),
           ),
         ),
