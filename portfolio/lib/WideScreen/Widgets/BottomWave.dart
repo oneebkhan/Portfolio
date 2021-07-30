@@ -14,7 +14,7 @@ class BottomWave extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInUp(
       delay: Duration(milliseconds: 50),
-      child: Stack(
+      child: Column(
         children: [
           Container(
             width: width,
@@ -24,18 +24,16 @@ class BottomWave extends StatelessWidget {
               width: width,
             ),
           ),
-          Column(
-            children: [
-              Container(
-                width: width,
-                height: 100,
-              ),
-              Container(
-                width: width,
-                height: 300,
+          Container(
+            width: width,
+            height: 200,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 0,
                 color: const Color.fromARGB(255, 186, 182, 248),
               ),
-            ],
+              color: const Color.fromARGB(255, 186, 182, 248),
+            ),
           )
         ],
       ),
@@ -67,9 +65,15 @@ class MyClipPath extends AnimatedWidget {
                 child: Opacity(
                   opacity: 0.5,
                   child: Container(
-                    color: backgroundColor,
                     width: width * 2,
                     height: 200,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 0,
+                        color: backgroundColor,
+                      ),
+                      color: backgroundColor,
+                    ),
                   ),
                 ),
               ),
@@ -82,9 +86,15 @@ class MyClipPath extends AnimatedWidget {
                 child: Opacity(
                   opacity: 0.5,
                   child: Container(
-                    color: backgroundColor,
                     width: width * 2,
                     height: 200,
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 0,
+                        color: backgroundColor,
+                      ),
+                      color: backgroundColor,
+                    ),
                   ),
                 ),
               ),

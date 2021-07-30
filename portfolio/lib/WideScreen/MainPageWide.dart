@@ -24,12 +24,14 @@ class _MainPageWideState extends State<MainPageWide> {
       Padding(
           padding: const EdgeInsets.only(top: 50),
           child: BottomWave(width: widget.width, height: widget.height)),
-      SkillsAndExperience(),
+      SkillsAndExperience(width: widget.width, height: widget.height),
     ];
 
     return Container(
+      width: widget.width,
       child: ListView.builder(
         itemCount: MainPage.length,
+        shrinkWrap: true,
         itemBuilder: (BuildContext context, int index) {
           return MainPage[index];
         },
