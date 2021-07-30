@@ -17,15 +17,16 @@ class MainPageWide extends StatefulWidget {
 class _MainPageWideState extends State<MainPageWide> {
   @override
   Widget build(BuildContext context) {
+    //This is a list of widgets
     List<Widget> MainPage = [
       TopBar(height: widget.height, width: widget.width),
       MainPageIntro(width: widget.width, height: widget.height),
       Padding(
-        padding: const EdgeInsets.only(top: 50),
-        child: BottomWave(width: widget.width, height: widget.height),
-      ),
+          padding: const EdgeInsets.only(top: 50),
+          child: BottomWave(width: widget.width, height: widget.height)),
       SkillsAndExperience(),
     ];
+
     return Container(
       child: ListView.builder(
         itemCount: MainPage.length,

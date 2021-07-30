@@ -6,14 +6,10 @@ import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(
-    Sizer(
-      builder: (context, orientation, deviceType) {
-        return MaterialApp(
-          theme: ThemeData(fontFamily: 'Montserrat'),
-          debugShowCheckedModeBanner: false,
-          home: Root(),
-        );
-      },
+    MaterialApp(
+      theme: ThemeData(fontFamily: 'Montserrat'),
+      debugShowCheckedModeBanner: false,
+      home: Root(),
     ),
   );
 }
@@ -34,7 +30,7 @@ class _RootState extends State<Root> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 239, 240, 245),
       body: SafeArea(
-        child: width > 1000
+        child: width > 960
             ? MainPageWide(width: width, height: height)
             : Container(),
       ),
