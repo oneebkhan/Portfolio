@@ -14,13 +14,30 @@ class BottomWave extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInUp(
       delay: Duration(milliseconds: 1800),
-      child: Container(
-        width: width,
-        height: 200,
-        child: MyAnimation(
-          height: height,
-          width: width,
-        ),
+      child: Stack(
+        children: [
+          Container(
+            width: width,
+            height: 200,
+            child: MyAnimation(
+              height: height,
+              width: width,
+            ),
+          ),
+          Column(
+            children: [
+              Container(
+                width: width,
+                height: 100,
+              ),
+              Container(
+                width: width,
+                height: 300,
+                color: const Color.fromARGB(255, 186, 182, 248),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }

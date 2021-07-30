@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/WideScreen/SkillsAndExperience.dart';
 import 'package:portfolio/WideScreen/Widgets/BottomWave.dart';
 import 'package:portfolio/WideScreen/Widgets/MainPageIntro.dart';
 import 'package:portfolio/WideScreen/Widgets/TopBar.dart';
@@ -25,6 +26,7 @@ class _MainPageWideState extends State<MainPageWide> {
             padding: const EdgeInsets.only(top: 50),
             child: BottomWave(width: widget.width, height: widget.height),
           ),
+          SkillsAndExperience(),
         ],
       ),
     );

@@ -18,7 +18,7 @@ class TopBar extends StatelessWidget {
       children: [
         FadeInDown(
           child: SizedBox(
-            width: (width / 10).clamp(150, 900),
+            width: (width / 10).clamp(150, 300),
             child: Image.network(
               'assets/images/Ring.png',
               fit: BoxFit.cover,
@@ -28,11 +28,12 @@ class TopBar extends StatelessWidget {
         FadeInDown(
           delay: Duration(milliseconds: 500),
           child: Padding(
-            padding: const EdgeInsets.only(
-              top: 12.0,
-              right: 30,
+            padding: EdgeInsets.only(
+              top: width / 70,
+              right: width / 60,
             ),
             child: Container(
+              width: width / 3.7,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -50,7 +51,7 @@ class TopBar extends StatelessWidget {
                         child: Text(
                           'Home',
                           style: TextStyle(
-                            fontSize: (width / 100).clamp(16, 50),
+                            fontSize: (width / 100).clamp(16, 30),
                             color: const Color.fromARGB(255, 112, 112, 112),
                           ),
                         ),
@@ -71,7 +72,7 @@ class TopBar extends StatelessWidget {
                         child: Text(
                           'Skills',
                           style: TextStyle(
-                            fontSize: (width / 100).clamp(16, 50),
+                            fontSize: (width / 100).clamp(16, 30),
                             color: const Color.fromARGB(255, 112, 112, 112),
                           ),
                         ),
@@ -92,7 +93,7 @@ class TopBar extends StatelessWidget {
                         child: Text(
                           'Projects',
                           style: TextStyle(
-                            fontSize: (width / 100).clamp(16, 50),
+                            fontSize: (width / 100).clamp(16, 30),
                             color: const Color.fromARGB(255, 112, 112, 112),
                           ),
                         ),
@@ -113,7 +114,7 @@ class TopBar extends StatelessWidget {
                         child: Text(
                           'Contact Me',
                           style: TextStyle(
-                            fontSize: (width / 100).clamp(16, 50),
+                            fontSize: (width / 100).clamp(16, 30),
                             color: const Color.fromARGB(255, 112, 112, 112),
                           ),
                         ),
@@ -136,7 +137,7 @@ class TopBar extends StatelessWidget {
                         child: Text(
                           'Resume',
                           style: TextStyle(
-                            fontSize: (width / 100).clamp(16, 50),
+                            fontSize: (width / 100).clamp(16, 30),
                             color: const Color.fromARGB(255, 147, 138, 242),
                           ),
                         ),

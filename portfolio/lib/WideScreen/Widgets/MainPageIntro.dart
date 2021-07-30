@@ -36,8 +36,8 @@ class _MainPageIntroState extends State<MainPageIntro> {
 
   @override
   Widget build(BuildContext context) {
-    double circleWidth = (widget.width / 27).clamp(50, 170);
-    double circleHeight = (widget.width / 27).clamp(50, 170);
+    double circleWidth = (widget.width / 30).clamp(50, 90);
+    double circleHeight = (widget.width / 30).clamp(50, 90);
     double specialHeight = (widget.width / 5).clamp(300, 500);
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: widget.width / 20),
@@ -84,6 +84,7 @@ class _MainPageIntroState extends State<MainPageIntro> {
                                       },
                                       icon: Icon(
                                         Icons.keyboard_arrow_down_rounded,
+                                        size: circleWidth / 2.5,
                                         color: const Color.fromARGB(
                                             255, 169, 163, 249),
                                       ),
@@ -100,6 +101,7 @@ class _MainPageIntroState extends State<MainPageIntro> {
                                     height: circleWidth,
                                     width: circleWidth,
                                     child: IconButton(
+                                      padding: const EdgeInsets.all(0),
                                       onPressed: () {
                                         setState(() {
                                           _isExpanded = false;
@@ -107,6 +109,7 @@ class _MainPageIntroState extends State<MainPageIntro> {
                                       },
                                       icon: Icon(
                                         Icons.close,
+                                        size: circleWidth / 2.5,
                                         color: const Color.fromARGB(
                                             255, 169, 163, 249),
                                       ),
@@ -115,11 +118,13 @@ class _MainPageIntroState extends State<MainPageIntro> {
                                 ),
                                 Expanded(
                                   child: IconButton(
+                                    padding: const EdgeInsets.all(0),
                                     onPressed: () {
                                       launch('https://github.com/oneebkhan');
                                     },
                                     icon: FaIcon(
                                       FontAwesomeIcons.github,
+                                      size: circleWidth / 2.5,
                                       color: const Color.fromARGB(
                                           255, 169, 163, 249),
                                     ),
@@ -127,12 +132,14 @@ class _MainPageIntroState extends State<MainPageIntro> {
                                 ),
                                 Expanded(
                                   child: IconButton(
+                                    padding: const EdgeInsets.all(0),
                                     onPressed: () {
                                       launch(
                                           'https://www.linkedin.com/in/oneeb-khan-6b3b701b0/');
                                     },
                                     icon: FaIcon(
                                       FontAwesomeIcons.linkedin,
+                                      size: circleWidth / 2.5,
                                       color: const Color.fromARGB(
                                           255, 169, 163, 249),
                                     ),
@@ -140,11 +147,13 @@ class _MainPageIntroState extends State<MainPageIntro> {
                                 ),
                                 Expanded(
                                   child: IconButton(
+                                    padding: const EdgeInsets.all(0),
                                     onPressed: () {
                                       launch('tel:03055533774');
                                     },
                                     icon: Icon(
                                       Icons.phone,
+                                      size: circleWidth / 2.5,
                                       color: const Color.fromARGB(
                                           255, 169, 163, 249),
                                     ),
@@ -152,12 +161,14 @@ class _MainPageIntroState extends State<MainPageIntro> {
                                 ),
                                 Expanded(
                                   child: IconButton(
+                                    padding: const EdgeInsets.all(0),
                                     onPressed: () {
                                       launch(
                                           'mailto:khanoneeb1997@hotmail.com');
                                     },
                                     icon: Icon(
                                       Icons.email,
+                                      size: circleWidth / 2.5,
                                       color: const Color.fromARGB(
                                           255, 169, 163, 249),
                                     ),
@@ -199,7 +210,7 @@ class _MainPageIntroState extends State<MainPageIntro> {
                       SelectableText(
                         'Software Engineer',
                         style: TextStyle(
-                          fontSize: (widget.width / 45).clamp(30, 100),
+                          fontSize: (widget.width / 45).clamp(30, 70),
                         ),
                       ),
                       SizedBox(
@@ -210,7 +221,7 @@ class _MainPageIntroState extends State<MainPageIntro> {
                         child: SelectableText(
                           'Young developer passionate about flutter front-end and Django or Firebase back-end development. I make apps that are functional and look good doing what they do.',
                           style: TextStyle(
-                            fontSize: (widget.width / 60).clamp(20, 120),
+                            fontSize: (widget.width / 60).clamp(20, 50),
                           ),
                         ),
                       ),
@@ -246,7 +257,7 @@ class _MainPageIntroState extends State<MainPageIntro> {
                                   color: Color.fromARGB(255, 169, 163, 249),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
+                                  padding: EdgeInsets.all(widget.width / 180),
                                   child: Icon(
                                     Icons.arrow_forward_ios_rounded,
                                     color: Colors.white,
@@ -327,9 +338,9 @@ class _LogoState extends State<Logo> {
 
   @override
   Widget build(BuildContext context) {
-    double circleWidth = (widget.width / 27).clamp(50, 170);
-    double circleHeight = (widget.width / 27).clamp(50, 170);
-    double specialHeight = (widget.width / 5).clamp(300, 500);
+    double circleWidth = (widget.width / 25).clamp(50, 90);
+    double circleHeight = (widget.width / 25).clamp(50, 90);
+    double specialHeight = (widget.width / 4).clamp(300, 500);
 
     return FadeInDown(
       delay: Duration(milliseconds: 1300),
@@ -358,6 +369,7 @@ class _LogoState extends State<Logo> {
                           height: circleWidth,
                           width: circleWidth,
                           child: IconButton(
+                            padding: const EdgeInsets.all(0),
                             onPressed: () {
                               setState(() {
                                 _isExpanded = true;
@@ -365,6 +377,7 @@ class _LogoState extends State<Logo> {
                             },
                             icon: Icon(
                               Icons.keyboard_arrow_down_rounded,
+                              size: circleWidth / 3,
                               color: const Color.fromARGB(255, 169, 163, 249),
                             ),
                           ),
@@ -380,6 +393,7 @@ class _LogoState extends State<Logo> {
                           height: circleWidth,
                           width: circleWidth,
                           child: IconButton(
+                            padding: const EdgeInsets.all(0),
                             onPressed: () {
                               setState(() {
                                 _isExpanded = false;
@@ -387,6 +401,7 @@ class _LogoState extends State<Logo> {
                             },
                             icon: Icon(
                               Icons.close,
+                              size: circleWidth / 3,
                               color: const Color.fromARGB(255, 169, 163, 249),
                             ),
                           ),
@@ -396,6 +411,7 @@ class _LogoState extends State<Logo> {
                         child: Tooltip(
                           message: 'Flutter mobile developer',
                           child: IconButton(
+                            padding: const EdgeInsets.all(0),
                             onPressed: () {
                               setState(() {
                                 _isExpanded = false;
@@ -403,6 +419,7 @@ class _LogoState extends State<Logo> {
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.mobile,
+                              size: circleWidth / 3,
                               color: const Color.fromARGB(255, 169, 163, 249),
                             ),
                           ),
@@ -412,6 +429,7 @@ class _LogoState extends State<Logo> {
                         child: Tooltip(
                           message: 'Flutter web developer',
                           child: IconButton(
+                            padding: const EdgeInsets.all(0),
                             onPressed: () {
                               setState(() {
                                 _isExpanded = false;
@@ -419,6 +437,7 @@ class _LogoState extends State<Logo> {
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.globe,
+                              size: circleWidth / 3,
                               color: const Color.fromARGB(255, 169, 163, 249),
                             ),
                           ),
@@ -428,6 +447,7 @@ class _LogoState extends State<Logo> {
                         child: Tooltip(
                           message: 'Python developer',
                           child: IconButton(
+                            padding: const EdgeInsets.all(0),
                             onPressed: () {
                               setState(() {
                                 _isExpanded = false;
@@ -435,6 +455,7 @@ class _LogoState extends State<Logo> {
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.python,
+                              size: circleWidth / 3,
                               color: const Color.fromARGB(255, 169, 163, 249),
                             ),
                           ),
@@ -444,6 +465,7 @@ class _LogoState extends State<Logo> {
                         child: Tooltip(
                           message: 'Django Rest Framework API developer',
                           child: IconButton(
+                            padding: const EdgeInsets.all(0),
                             onPressed: () {
                               setState(() {
                                 _isExpanded = false;
@@ -451,6 +473,7 @@ class _LogoState extends State<Logo> {
                             },
                             icon: FaIcon(
                               FontAwesomeIcons.cogs,
+                              size: circleWidth / 3,
                               color: const Color.fromARGB(255, 169, 163, 249),
                             ),
                           ),
@@ -476,8 +499,8 @@ class BigLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width / 3,
-      height: width / 3,
+      width: (width / 3).clamp(200, 900),
+      height: (width / 3).clamp(200, 900),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: const Color.fromARGB(255, 72, 67, 81),
