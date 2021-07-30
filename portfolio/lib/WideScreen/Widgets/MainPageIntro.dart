@@ -287,6 +287,7 @@ class _MainPageIntroState extends State<MainPageIntro> {
               width: widget.width / 2.2,
               height: (widget.width / 3.3).clamp(400, 2000),
               child: Row(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

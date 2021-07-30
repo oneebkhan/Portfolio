@@ -26,7 +26,7 @@ class BottomWave extends StatelessWidget {
           ),
           Container(
             width: width,
-            height: 200,
+            height: 220,
             decoration: BoxDecoration(
               border: Border.all(
                 width: 0,
