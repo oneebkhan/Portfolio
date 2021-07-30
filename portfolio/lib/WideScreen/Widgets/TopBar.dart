@@ -30,10 +30,10 @@ class TopBar extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.only(
               top: width / 70,
-              right: width / 60,
+              right: width / 25,
             ),
             child: Container(
-              width: width / 3.7,
+              width: (width / 3.7).clamp(500, 1000),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -46,14 +46,11 @@ class TopBar extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          'Home',
-                          style: TextStyle(
-                            fontSize: (width / 100).clamp(16, 30),
-                            color: const Color.fromARGB(255, 112, 112, 112),
-                          ),
+                      child: Text(
+                        'Home',
+                        style: TextStyle(
+                          fontSize: (width / 100).clamp(16, 30),
+                          color: const Color.fromARGB(255, 112, 112, 112),
                         ),
                       ),
                     ),
@@ -67,14 +64,11 @@ class TopBar extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          'Skills',
-                          style: TextStyle(
-                            fontSize: (width / 100).clamp(16, 30),
-                            color: const Color.fromARGB(255, 112, 112, 112),
-                          ),
+                      child: Text(
+                        'Skills',
+                        style: TextStyle(
+                          fontSize: (width / 100).clamp(16, 30),
+                          color: const Color.fromARGB(255, 112, 112, 112),
                         ),
                       ),
                     ),
@@ -88,14 +82,11 @@ class TopBar extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          'Projects',
-                          style: TextStyle(
-                            fontSize: (width / 100).clamp(16, 30),
-                            color: const Color.fromARGB(255, 112, 112, 112),
-                          ),
+                      child: Text(
+                        'Projects',
+                        style: TextStyle(
+                          fontSize: (width / 100).clamp(16, 30),
+                          color: const Color.fromARGB(255, 112, 112, 112),
                         ),
                       ),
                     ),
@@ -109,14 +100,11 @@ class TopBar extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          'Contact Me',
-                          style: TextStyle(
-                            fontSize: (width / 100).clamp(16, 30),
-                            color: const Color.fromARGB(255, 112, 112, 112),
-                          ),
+                      child: Text(
+                        'Contact Me',
+                        style: TextStyle(
+                          fontSize: (width / 100).clamp(16, 30),
+                          color: const Color.fromARGB(255, 112, 112, 112),
                         ),
                       ),
                     ),
@@ -132,14 +120,11 @@ class TopBar extends StatelessWidget {
                       onPressed: () {
                         launch('assets/PDF/Oneeb Khan Resume.pdf');
                       },
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          'Resume',
-                          style: TextStyle(
-                            fontSize: (width / 100).clamp(16, 30),
-                            color: const Color.fromARGB(255, 147, 138, 242),
-                          ),
+                      child: Text(
+                        'Resume',
+                        style: TextStyle(
+                          fontSize: (width / 100).clamp(16, 30),
+                          color: const Color.fromARGB(255, 147, 138, 242),
                         ),
                       ),
                     ),
