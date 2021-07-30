@@ -12,13 +12,11 @@ class _SkillsAndExperienceState extends State<SkillsAndExperience> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Container(
-        child: FadeInDown(
-          delay: Duration(milliseconds: 300),
-          child: Text(
-            'Give Me Cake',
-            style: TextStyle(fontSize: 200),
-          ),
+      child: FadeInDown(
+        delay: Duration(milliseconds: 300),
+        child: Text(
+          'Give Me Cake',
+          style: TextStyle(fontSize: 2000),
         ),
       ),
     );

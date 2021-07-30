@@ -13,7 +13,7 @@ class BottomWave extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInUp(
-      delay: Duration(milliseconds: 1800),
+      delay: Duration(milliseconds: 50),
       child: Stack(
         children: [
           Container(
@@ -162,8 +162,8 @@ class _MyAnimationState extends State<MyAnimation>
 
   @override
   void dispose() {
-    super.dispose();
     _controller.dispose();
+    super.dispose();
   }
 
   @override
