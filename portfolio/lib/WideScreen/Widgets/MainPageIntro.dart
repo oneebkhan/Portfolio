@@ -518,6 +518,9 @@ class BigLogo extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
+            border: Border.all(
+              width: 0,
+            ),
             color: const Color.fromARGB(255, 72, 67, 81),
             image: DecorationImage(
               image: NetworkImage('assets/images/Logo.png'),
@@ -528,6 +531,9 @@ class BigLogo extends StatelessWidget {
         child2: Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
+            border: Border.all(
+              width: 0,
+            ),
             color: const Color.fromARGB(255, 255, 255, 255),
             image: DecorationImage(
               image: NetworkImage('assets/images/Profile.png'),

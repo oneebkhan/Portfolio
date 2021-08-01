@@ -30,9 +30,10 @@ class _SkillsAndExperienceState extends State<SkillsAndExperience> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           FadeInDown(
-            delay: Duration(milliseconds: 500),
+            delay: Duration(milliseconds: 250),
             child: Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -40,6 +41,7 @@ class _SkillsAndExperienceState extends State<SkillsAndExperience> {
                 children: [
                   Container(
                     width: widget.width / 2,
+                    child: Image.network('assets/images/Phone Picture.png'),
                   ),
                   Container(
                     width: widget.width / 2,
@@ -50,7 +52,7 @@ class _SkillsAndExperienceState extends State<SkillsAndExperience> {
                           padding: const EdgeInsets.all(20),
                           decoration: BoxDecoration(
                             color: const Color.fromARGB(255, 127, 120, 191),
-                            borderRadius: BorderRadius.circular(35),
+                            borderRadius: BorderRadius.circular(30),
                           ),
                           child: Text(
                             'Skills and\nExperience',
@@ -83,10 +85,42 @@ class _SkillsAndExperienceState extends State<SkillsAndExperience> {
             ),
           ),
           SizedBox(
-            height: 200,
-          )
+            height: 100,
+          ),
+          Container(
+            width: widget.width,
+            child: GridView.builder(
+              shrinkWrap: true,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 5,
+              ),
+              itemCount: 5,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  child: Text('asasas'),
+                );
+              },
+            ),
+          ),
         ],
       ),
+    );
+  }
+}
+
+class SkillsIcons extends StatelessWidget {
+  final double width;
+  final double height;
+  const SkillsIcons({
+    Key? key,
+    required this.width,
+    required this.height,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: null,
     );
   }
 }
