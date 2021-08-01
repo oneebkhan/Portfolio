@@ -13,7 +13,6 @@ class BottomWave extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInUp(
-      delay: Duration(milliseconds: 50),
       child: Column(
         children: [
           Container(
@@ -26,7 +25,7 @@ class BottomWave extends StatelessWidget {
           ),
           Container(
             width: width,
-            height: 220,
+            height: width > 1500 ? 300 : 200,
             decoration: BoxDecoration(
               border: Border.all(
                 width: 0,
