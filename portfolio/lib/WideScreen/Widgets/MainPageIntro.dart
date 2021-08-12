@@ -523,7 +523,7 @@ class BigLogo extends StatelessWidget {
             ),
             color: const Color.fromARGB(255, 72, 67, 81),
             image: DecorationImage(
-              image: NetworkImage('assets/images/Logo.png'),
+              image: NetworkImage('assets/assets/images/Logo.png'),
               fit: BoxFit.fitHeight,
             ),
           ),
@@ -536,7 +536,7 @@ class BigLogo extends StatelessWidget {
             ),
             color: const Color.fromARGB(255, 255, 255, 255),
             image: DecorationImage(
-              image: NetworkImage('assets/images/Profile.png'),
+              image: NetworkImage('assets/assets/images/Profile.png'),
               fit: BoxFit.fitHeight,
             ),
           ),

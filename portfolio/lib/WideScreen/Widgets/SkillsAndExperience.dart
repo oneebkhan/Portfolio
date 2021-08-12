@@ -39,7 +39,7 @@ class SkillsAndExperience extends StatelessWidget {
                 child: Container(
                   width: _pictureWidth,
                   child: Image.network(
-                    'assets/images/Phone Picture.png',
+                    'assets/assets/images/PhonePicture.png',
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -148,7 +148,7 @@ class SkillsAndExperience extends StatelessWidget {
           width: width,
           height: height,
           child: Image.network(
-            'assets/images/Flutter.png',
+            'assets/assets/images/Flutter.png',
             fit: BoxFit.fitHeight,
           ),
         ),
@@ -160,7 +160,7 @@ class SkillsAndExperience extends StatelessWidget {
           width: width,
           height: height,
           child: Image.network(
-            'assets/images/firebase.png',
+            'assets/assets/images/firebase.png',
             fit: BoxFit.fitHeight,
           ),
         ),
@@ -171,7 +171,7 @@ class SkillsAndExperience extends StatelessWidget {
           width: width,
           height: height,
           child: Image.network(
-            'assets/images/Django.png',
+            'assets/assets/images/Django.png',
             fit: BoxFit.fitHeight,
           ),
         ),
@@ -183,7 +183,7 @@ class SkillsAndExperience extends StatelessWidget {
           width: width,
           height: height,
           child: Image.network(
-            'assets/images/Python.png',
+            'assets/assets/images/Python.png',
             fit: BoxFit.fitHeight,
           ),
         ),
@@ -194,7 +194,7 @@ class SkillsAndExperience extends StatelessWidget {
           width: width,
           height: height,
           child: Image.network(
-            'assets/images/adobeXD.png',
+            'assets/assets/images/adobeXD.png',
             fit: BoxFit.fitHeight,
           ),
         ),

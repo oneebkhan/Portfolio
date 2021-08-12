@@ -20,7 +20,7 @@ class TopBar extends StatelessWidget {
           child: SizedBox(
             width: (width / 10).clamp(150, 300),
             child: Image.network(
-              'assets/images/Ring.png',
+              'assets/assets/images/Ring.png',
               fit: BoxFit.cover,
             ),
           ),
@@ -118,7 +118,7 @@ class TopBar extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        launch('assets/PDF/Oneeb Khan Resume.pdf');
+                        launch('assets/assets/PDF/OneebKhanResume.pdf');
                       },
                       child: Text(
                         'Resume',

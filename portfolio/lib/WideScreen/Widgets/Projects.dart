@@ -16,7 +16,7 @@ class Projects extends StatelessWidget {
     final double _container2Width = (width / 4).clamp(300, 650);
     final double _pictureWidth = (width / 2.3).clamp(530, 1200);
     final double _backCircle = (width / 2.7).clamp(550, 1200);
-    final double _padding = (width / 30).clamp(30, 70);
+    final double _padding = (width / 30).clamp(25, 70);
 
     return Container(
       padding: width > 1500
@@ -41,7 +41,7 @@ class Projects extends StatelessWidget {
                 Container(
                   width: _containerWidth,
                   child: Stack(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    clipBehavior: Clip.hardEdge,
                     children: [
                       Container(
                         width: _backCircle,
@@ -49,7 +49,7 @@ class Projects extends StatelessWidget {
                           delay: Duration(milliseconds: 500),
                           duration: Duration(milliseconds: 1200),
                           child: Image.network(
-                            'assets/images/backCircles.png',
+                            'assets/assets/images/backCircles.png',
                             fit: BoxFit.contain,
                           ),
                         ),
@@ -72,7 +72,7 @@ class Projects extends StatelessWidget {
                                       height: height,
                                       width: width,
                                       image:
-                                          'assets/images/Project-medicineTracker.png',
+                                          'assets/assets/images/Project-medicineTracker.png',
                                       title: 'Medicine Authenticator',
                                       description:
                                           'Scan barcodes to view the authenticity of the medicinal product, all the while having a suite of different medicine stats and features',
@@ -87,7 +87,7 @@ class Projects extends StatelessWidget {
                                       height: height,
                                       width: width,
                                       image:
-                                          'assets/images/Project-medicineTracker.png',
+                                          'assets/assets/images/Project-medicineTracker.png',
                                       title: 'Medicine Authenticator',
                                       description:
                                           'Scan barcodes to view the authenticity of the medicinal product, all the while having a suite of different medicine stats and features',
@@ -105,7 +105,7 @@ class Projects extends StatelessWidget {
                                     height: height,
                                     width: width,
                                     image:
-                                        'assets/images/Project-medicineTracker.png',
+                                        'assets/assets/images/Project-medicineTracker.png',
                                     title: 'Medicine Authenticator',
                                     description:
                                         'Scan barcodes to view the authenticity of the medicinal product, all the while having a suite of different medicine stats and features',
@@ -135,7 +135,7 @@ class Projects extends StatelessWidget {
                       width: width,
                       description:
                           'The personal projects that I have worked on in my time as a software engineer, with links to the GitHub repos if available.',
-                      launchGit: 'https://github.com/oneebkhan',
+                      launchGit: 'https://github.com/oneebkhan?tab=repositories',
                       title: 'My Projects',
                     ),
                   ),
@@ -169,10 +169,10 @@ class ProjectHeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double _tileTopHeight = (width / 10).clamp(160, 400);
-    final double _tileWidth = (width / 7).clamp(225, 500);
-    final double _titleFont = (width / 50).clamp(25, 80);
-    final double _sizedbox = (width / 120).clamp(15, 50);
+    final double _tileTopHeight = (width / 10).clamp(150, 400);
+    final double _tileWidth = (width / 7).clamp(205, 500);
+    final double _titleFont = (width / 50).clamp(20, 80);
+    final double _sizedbox = (width / 120).clamp(20, 50);
     final double _button = (width / 50).clamp(35, 60);
     final double _buttonPadding = (width / 60).clamp(30, 80);
     return Column(
@@ -274,12 +274,12 @@ class ProjectTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double _tileTopHeight = (width / 10).clamp(160, 700);
-    final double _tileWidth = (width / 7).clamp(225, 550);
-    final double _titleFont = (width / 85).clamp(18, 45);
-    final double _sizedbox = (width / 120).clamp(15, 50);
-    final double _button = (width / 70).clamp(25, 50);
-    final double _buttonPadding = (width / 100).clamp(15, 50);
+    final double _tileTopHeight = (width / 10).clamp(140, 700);
+    final double _tileWidth = (width / 7).clamp(200, 550);
+    final double _titleFont = (width / 85).clamp(16, 45);
+    final double _sizedbox = (width / 120).clamp(13, 50);
+    final double _button = (width / 70).clamp(23, 50);
+    final double _buttonPadding = (width / 100).clamp(13, 50);
     return FadeInDown(
       delay: Duration(milliseconds: delay),
       duration: Duration(milliseconds: 1000),
