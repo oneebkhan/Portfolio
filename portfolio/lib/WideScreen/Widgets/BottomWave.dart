@@ -13,6 +13,7 @@ class BottomWave extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInUp(
+      delay: Duration(milliseconds: 0),
       child: Column(
         children: [
           Container(

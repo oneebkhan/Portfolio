@@ -12,11 +12,11 @@ class Projects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double _containerWidth = (width / 2).clamp(500, 600);
-    final double _container2Width = (width / 4).clamp(300, 650);
+    final double _containerWidth = (width / 2).clamp(500, 69000);
+    final double _container2Width = (width / 3).clamp(300, 69000);
     final double _pictureWidth = (width / 2.3).clamp(530, 1200);
-    final double _backCircle = (width / 2.7).clamp(550, 1200);
-    final double _padding = (width / 30).clamp(25, 70);
+    final double _backCircle = (width / 2.7).clamp(500, 1200);
+    final double _padding = (width / 30).clamp(25, 50);
 
     return Container(
       padding: width > 1500
@@ -122,6 +122,7 @@ class Projects extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(width: _padding,),
                 // SizedBox(
                 //   width: width > 1800 ? 100 : 0,
                 // ),
